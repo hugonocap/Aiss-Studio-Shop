@@ -10,12 +10,9 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            TopNavigation()
+            Spacer()
         }
-        .padding()
     }
 }
 
@@ -24,3 +21,20 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
+struct TopNavigation: View {
+    var body: some View {
+        HStack(alignment: .center) {
+            Image(systemName: "line.3.horizontal")
+                .scaleEffect(1.5)
+            Spacer()
+            Text("Aiss Studio")
+                .font(.system(size: 19, design: .serif))
+            Spacer()
+            Image(systemName: "magnifyingglass")
+                .scaleEffect(1.5)
+        }
+        .padding()
+    }
+}
+
