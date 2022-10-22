@@ -14,6 +14,7 @@ struct ContentView: View {
             CollectionImage()
             PopularAndItem()
             Spacer()
+            BottomNavigation()
         }
     }
 }
@@ -23,23 +24,29 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
+// top navigation struct
 struct TopNavigation: View {
     var body: some View {
         HStack(alignment: .center) {
-            Image(systemName: "line.3.horizontal")
-                .scaleEffect(1.5)
+            Button(action: {}) {
+                Image(systemName: "line.3.horizontal")
+                    .foregroundColor(Color("AppGray"))
+                    .scaleEffect(1.5)
+            }
             Spacer()
             Text("Aiss Studio")
                 .font(.system(size: 19, design: .serif))
             Spacer()
-            Image(systemName: "magnifyingglass")
-                .scaleEffect(1.5)
+            Button(action: {}) {
+                Image(systemName: "magnifyingglass")
+                    .foregroundColor(Color("AppGray"))
+                    .scaleEffect(1.5)
+            }
         }
         .padding()
     }
 }
-
+// main image struct
 struct CollectionImage: View {
     var body: some View {
         ZStack {
@@ -62,7 +69,7 @@ struct CollectionImage: View {
         }
     }
 }
-
+// main text struct
 struct PopularAndItem: View {
     var body: some View {
         HStack(spacing: 0) {
@@ -83,5 +90,33 @@ struct PopularAndItem: View {
         }
         .padding(.top, 10)
         .padding(.horizontal, 22)
+    }
+}
+
+struct BottomNavigation: View {
+    var body: some View {
+        HStack(spacing: 60) {
+            BottomNavigationButton(isSelected: true, icon: "house.fill")
+            BottomNavigationButton(isSelected: false, icon: "square.grid.2x2")
+            BottomNavigationButton(isSelected: false, icon: "cart")
+            BottomNavigationButton(isSelected: false, icon: "creditcard")
+        }
+        .scaleEffect(1.25)
+        .background(.white)
+        .padding(.horizontal, 22)
+        .padding([.top, .bottom], 22)
+        .frame(maxWidth: .infinity)
+        
+    }
+}
+
+struct BottomNavigationButton: View {
+    var isSelected: Bool = false
+    var icon: String
+    var body: some View {
+        Button(action: {}) {
+            Image(systemName: icon)
+                .foregroundColor(isSelected ? Color("AppGray") : .gray)
+        }
     }
 }
