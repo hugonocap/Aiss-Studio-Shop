@@ -11,6 +11,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TopNavigation()
+            CollectionImage()
             Spacer()
         }
     }
@@ -38,3 +39,25 @@ struct TopNavigation: View {
     }
 }
 
+struct CollectionImage: View {
+    var body: some View {
+        ZStack {
+            Image("NewCollection")
+                .resizable()
+                .clipShape(Rectangle())
+                .frame(maxWidth: .infinity)
+                .frame(height: 290)
+                .scaledToFit()
+            
+            VStack {
+                Text("New Collection For Fall")
+                    .padding()
+                    .foregroundColor(.white)
+                    .background(.black.opacity(0.3))
+                    .cornerRadius(12)
+                    .fontWeight(.medium)
+            }
+            .padding(.top, 90)
+        }
+    }
+}
