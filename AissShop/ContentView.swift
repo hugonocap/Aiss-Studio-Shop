@@ -9,26 +9,36 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        ZStack {
-            Color("AppWhite")
-                .ignoresSafeArea()
-            VStack {
-                TopNavigation()
-                // scroll
-                ScrollView {
-                    CollectionImage()
-                    PopularAndItem()
-                    LazyVGrid(columns: [GridItem(.flexible(minimum: 120)),
-                                        GridItem(.flexible(minimum: 120))], spacing: 35) {
-                        ClothContainer(image: "tshirt1white", title: "White T-Shirt", type: "T-Shirt", price: "12.99")
-                        ClothContainer(image: "tshirt2white", title: "White T-Shirt", type: "T-Shirt", price: "10.99")
-                        ClothContainer(image: "pants3blue", title: "Blue Pants", type: "Women Pants", price: "34.99")
-                        ClothContainer(image: "bag4black", title: "Black Bag", type: "Women Bag", price: "29.99")
+        NavigationView {
+            ZStack {
+                Color("AppWhite")
+                    .ignoresSafeArea()
+                VStack {
+                    TopNavigation()
+                    // scroll
+                    ScrollView {
+                        CollectionImage()
+                        PopularAndItem()
+                        LazyVGrid(columns: [GridItem(.flexible(minimum: 120)),
+                                            GridItem(.flexible(minimum: 120))], spacing: 35) {
+                            NavigationLink(destination: ProductDetailedView()) {
+                                ClothContainer(image: "tshirt1white", title: "White T-Shirt", type: "T-Shirt", price: "12.99")
+                            }
+                            NavigationLink(destination: ProductDetailedView()) {
+                                ClothContainer(image: "tshirt2white", title: "White T-Shirt", type: "T-Shirt", price: "10.99")
+                            }
+                            NavigationLink(destination: ProductDetailedView()) {
+                                ClothContainer(image: "pants3blue", title: "Blue Pants", type: "Women Pants", price: "34.99")
+                            }
+                            NavigationLink(destination: ProductDetailedView()) {
+                                ClothContainer(image: "bag4black", title: "Black Bag", type: "Women Bag", price: "29.99")
+                            }
+                        }
+                                            .padding(.horizontal)
                     }
-                                        .padding(.horizontal)
+                    Spacer()
+                    BottomNavigation()
                 }
-                Spacer()
-                BottomNavigation()
             }
         }
     }
@@ -46,7 +56,7 @@ struct TopNavigation: View {
             Button(action: {}) {
                 Image(systemName: "line.3.horizontal")
                     .foregroundColor(Color("AppGray"))
-                    .scaleEffect(1.5)
+                    .scaleEffect(1.6)
             }
             Spacer()
             Text("Aiss Studio")
@@ -55,10 +65,10 @@ struct TopNavigation: View {
             Button(action: {}) {
                 Image(systemName: "magnifyingglass")
                     .foregroundColor(Color("AppGray"))
-                    .scaleEffect(1.5)
+                    .scaleEffect(1.6)
             }
         }
-        .padding()
+        .padding(23)
     }
 }
 // main image struct
@@ -68,16 +78,22 @@ struct CollectionImage: View {
             Image("NewCollection")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: .infinity, height: 300)
+                
             
             VStack {
-                Text("New Collection For Fall")
-                    .padding()
+                Text("New Collection")
+                    .padding(.vertical, 1)
+                    .font(.largeTitle)
+                    .foregroundColor(Color("AppWhite"))
+                    .fontWeight(.bold)
+                Text("For Fall")
+                    .padding(.vertical, 1)
                     .font(.largeTitle)
                     .foregroundColor(Color("AppWhite"))
                     .fontWeight(.bold)
             }
             .padding(.top, 90)
+            
         }
     }
 }
@@ -102,7 +118,7 @@ struct PopularAndItem: View {
             .foregroundColor(Color("AppGray"))
         }
         .padding(.top, 10)
-        .padding(.horizontal, 22)
+        .padding(.horizontal, 23)
     }
 }
 
@@ -149,12 +165,15 @@ struct ClothContainer: View {
             VStack(alignment: .leading, spacing: 7) {
                 Text(title)
                     .font(.system(size: 18, weight: .medium, design: .default))
+                    .foregroundColor(Color("AppGray"))
                 Text(type)
                     .font(.footnote)
+                    .foregroundColor(Color("AppGray"))
                     .fontWeight(.medium)
                     .opacity(0.4)
                 Text("$\(price)")
                     .font(.system(size: 18, weight: .regular, design: .rounded))
+                    .foregroundColor(Color("AppGray"))
             }
         }
     }

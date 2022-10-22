@@ -11,6 +11,7 @@
 		D90DDB092903EC0B00B2D1C8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D90DDB082903EC0B00B2D1C8 /* ContentView.swift */; };
 		D90DDB0B2903EC0B00B2D1C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DDB0A2903EC0B00B2D1C8 /* Assets.xcassets */; };
 		D90DDB0E2903EC0B00B2D1C8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D90DDB0D2903EC0B00B2D1C8 /* Preview Assets.xcassets */; };
+		D9E945FD2904557200A679EF /* ProductDetailedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9E945FC2904557200A679EF /* ProductDetailedView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		D90DDB082903EC0B00B2D1C8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D90DDB0A2903EC0B00B2D1C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D90DDB0D2903EC0B00B2D1C8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9E945FC2904557200A679EF /* ProductDetailedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 				D90DDB082903EC0B00B2D1C8 /* ContentView.swift */,
 				D90DDB0A2903EC0B00B2D1C8 /* Assets.xcassets */,
 				D90DDB0C2903EC0B00B2D1C8 /* Preview Content */,
+				D9E945FC2904557200A679EF /* ProductDetailedView.swift */,
 			);
 			path = AissShop;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D90DDB092903EC0B00B2D1C8 /* ContentView.swift in Sources */,
+				D9E945FD2904557200A679EF /* ProductDetailedView.swift in Sources */,
 				D90DDB072903EC0B00B2D1C8 /* AissShopApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
