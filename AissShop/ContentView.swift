@@ -12,6 +12,7 @@ struct ContentView: View {
         VStack {
             TopNavigation()
             CollectionImage()
+            PopularAndItem()
             Spacer()
         }
     }
@@ -59,5 +60,28 @@ struct CollectionImage: View {
             }
             .padding(.top, 90)
         }
+    }
+}
+
+struct PopularAndItem: View {
+    var body: some View {
+        HStack(spacing: 0) {
+            Text("Popular")
+                .fontWeight(.medium)
+                .foregroundColor(Color("AppGray"))
+            Spacer()
+            Link(destination: URL(string: "https://www.google.com")!) {
+                Text("18 Item")
+                    .fontWeight(.light)
+                    .underline()
+                Image(systemName: "arrow.up.right")
+                
+                    .scaleEffect(0.6)
+                    .fontWeight(.semibold)
+            }
+            .foregroundColor(Color("AppGray"))
+        }
+        .padding(.top, 10)
+        .padding(.horizontal, 22)
     }
 }
